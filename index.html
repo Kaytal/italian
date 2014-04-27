@@ -99,37 +99,37 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
+					<tr id="monday-special">
 						<td>Monday</td>
 						<td>Fettucine w/ Drink</td>
 						<td>6.99</td>
 					</tr>
-					<tr>
+					<tr id="tuesday-special">
 						<td>Tuesday</td>
 						<td>Beef Ravioli w/ Drink</td>
 						<td>6.99</td>
 					</tr>
-					<tr>
+					<tr id="wednesday-special">
 						<td>Wednesday</td>
 						<td>Two Slices of 1-topping Pizza w/ Drink</td>
 						<td>7.49</td>
 					</tr>
-					<tr>
+					<tr id="thursday-special">
 						<td>Thursday</td>
 						<td>Lasagna w/ Drink</td>
 						<td>6.49</td>
 					</tr>
-					<tr>
+					<tr id="friday-special">
 						<td>Friday</td>
 						<td>Fettucine w/ Drink</td>
 						<td>6.99</td>
 					</tr>
-					<tr>
+					<tr id="saturday-special">
 						<td>Saturday</td>
 						<td>Beef Ravioli w/ Drink</td>
 						<td>6.99</td>
 					</tr>
-					<tr>
+					<tr id="sunday-special">
 						<td>Sunday</td>
 						<td>Two Slices of 1-topping Pizza w/ Drink</td>
 						<td>7.49</td>
@@ -259,6 +259,35 @@
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
+	<!-- Highlight todays special -->
+	<script>
+	var todaysClass;
+	switch (new Date().getDay()) {
+	    case 0:
+	        todaysClass = 'sunday-special';
+	        break;
+	    case 1:
+	        todaysClass = 'monday-special';
+	        break;
+	    case 2:
+	        todaysClass = 'tuesday-special';
+	        break;
+	    case 3:
+	        todaysClass = 'wednesday-special';
+	        break;
+	    case 4:
+	        todaysClass = 'thursday-special';
+	        break;
+	    case 5:
+	        todaysClass = 'friday-special';
+	        break;
+	    case 6:
+	        todaysClass = 'saturday-special';
+	        break;
+	}
+
+	$('#' + todaysClass).css('background-color', 'yellow');
+	</script>
 
   </body>
 </html>
