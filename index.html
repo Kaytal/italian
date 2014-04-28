@@ -99,37 +99,37 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr id="monday-special">
+					<tr class="monday-special">
 						<td>Monday</td>
 						<td>Fettucine w/ Drink</td>
 						<td>6.99</td>
 					</tr>
-					<tr id="tuesday-special">
+					<tr class="tuesday-special">
 						<td>Tuesday</td>
 						<td>Beef Ravioli w/ Drink</td>
 						<td>6.99</td>
 					</tr>
-					<tr id="wednesday-special">
+					<tr class="wednesday-special">
 						<td>Wednesday</td>
 						<td>Two Slices of 1-topping Pizza w/ Drink</td>
 						<td>7.49</td>
 					</tr>
-					<tr id="thursday-special">
+					<tr class="thursday-special">
 						<td>Thursday</td>
 						<td>Lasagna w/ Drink</td>
 						<td>6.49</td>
 					</tr>
-					<tr id="friday-special">
+					<tr class="friday-special">
 						<td>Friday</td>
 						<td>Fettucine w/ Drink</td>
 						<td>6.99</td>
 					</tr>
-					<tr id="saturday-special">
+					<tr class="saturday-special">
 						<td>Saturday</td>
 						<td>Beef Ravioli w/ Drink</td>
 						<td>6.99</td>
 					</tr>
-					<tr id="sunday-special">
+					<tr class="sunday-special">
 						<td>Sunday</td>
 						<td>Two Slices of 1-topping Pizza w/ Drink</td>
 						<td>7.49</td>
@@ -147,13 +147,15 @@
 			<h3>Hours of Operation</h3>
 			<table>
 				<tbody>
-					<tr>
+					<tr class="monday-operation tuesday-operation wednesday-operation thursday-operation friday-operation saturday-operation">
 						<td>Monday - Saturday</td>
-						<td>10:30am - 9:00pm</td>
+						<td class="operating-hours">10:30am - 9:00pm</td>
+						<td class="operating-status"></td>
 					</tr>
-					<tr>
+					<tr class="sunday-operation">
 						<td>Sunday</td>
-						<td>11:00am - 7:00pm</td>
+						<td class="operating-hours">11:00am - 7:00pm</td>
+						<td class="operating-status"></td>
 					</tr>
 				<tbody>
 			</table>
@@ -258,35 +260,78 @@
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
-	<!-- Highlight todays special -->
+
+	<!-- Highlight todays special and operating status -->
 	<script>
+	var date = new Date();
 	var todaysClass;
-	switch (new Date().getDay()) {
+	switch (date.getDay()) {
 	    case 0:
-	        todaysClass = 'sunday-special';
+	        highlightSpecial('sunday-special');
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 11, 0);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 19, 0);
+	        highlightOperatingStatus('sunday-operation', open, close);
 	        break;
 	    case 1:
-	        todaysClass = 'monday-special';
+	        highlightSpecial('monday-special');
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
+	        highlightOperatingStatus('monday-operation', open, close);
 	        break;
 	    case 2:
-	        todaysClass = 'tuesday-special';
+	        highlightSpecial('tuesday-special');
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
+	        highlightOperatingStatus('tuesday-operation', open, close);
 	        break;
 	    case 3:
-	        todaysClass = 'wednesday-special';
+	        highlightSpecial('wednesday-special');
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
+	        highlightOperatingStatus('wednesday-operation', open, close);
 	        break;
 	    case 4:
-	        todaysClass = 'thursday-special';
+	        highlightSpecial('thursday-special');
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
+	        highlightOperatingStatus('thursday-operation', open, close);
 	        break;
 	    case 5:
-	        todaysClass = 'friday-special';
+	        highlightSpecial('friday-special');
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
+	        highlightOperatingStatus('friday-operation', open, close);
 	        break;
 	    case 6:
-	        todaysClass = 'saturday-special';
+	        highlightSpecial('saturday-special');
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
+	        highlightOperatingStatus('saturday-operation', open, close);
 	        break;
 	}
 
-	$('#' + todaysClass).css('background-color', '#cc3333');
-	$('#' + todaysClass).children().css('color', 'white');
+	function highlightSpecial(todaysClass)
+	{
+		$('.' + todaysClass).css('background-color', '#cc3333');
+		$('.' + todaysClass).children().css('color', 'white');
+	}
+
+	function highlightOperatingStatus(todaysClass, open, close)
+	{
+		var date = new Date();
+		if(date > open && date < close)
+		{
+			// Set open highlights
+			$('.' + todaysClass).css('background-color', '#009933')
+			$('.' + todaysClass).children().css('color', 'white');
+			$('.' + todaysClass + ' .operating-status').text(' Open');
+		} else {
+			$('.' + todaysClass).css('background-color', '#cc3333')
+			$('.' + todaysClass).children().css('color', 'white');
+			$('.' + todaysClass + ' .operating-status').text(' Closed');
+		}
+
+	}
 	</script>
 
   </body>
