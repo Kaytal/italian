@@ -51,14 +51,15 @@ body {font-family: "Lato"; font-weight: 400; color: #555555; position: relative;
 @media only screen and (max-width: 767px) { .only-on-phones { display: block !important; } }
 
 .only-on-phones { display: none; }
+.no-top-pad {padding-top: 0; padding-bottom: 0;}
 
 div#content .row { background: white; }
 
-div#content { background: #34495e; }
+div#content { background: #34495e; min-height: 80%;}
 
 html, body { height: 100%; }
 
-.footer {text-align: center; }
+.footer {text-align: center;}
 
 .hide { display: none; }
 
