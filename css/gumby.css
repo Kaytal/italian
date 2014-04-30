@@ -1600,7 +1600,7 @@ label + .xnarrow:last-child, label + .narrow:last-child, label + .normal:last-ch
 .alert.success { background: #91e26a; border: 1px solid #58c026; color: #316b15; }
 
 /* Tabs */
-.tabs { display: block; }
+.tabs { display: block; padding-top: 20px;}
 
 .tab-nav { margin: 0; padding: 0; border-bottom: 1px solid #e5e5e5; }
 .tab-nav > li { display: inline-block; width: auto; padding: 0; margin: 0 2.12766% 0 0; cursor: default; top: 1px; -webkit-box-shadow: 0 1px 0 white; -moz-box-shadow: 0 1px 0 white; box-shadow: 0 1px 0 white; }
