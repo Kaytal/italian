@@ -55,7 +55,7 @@ body {font-family: "Lato"; font-weight: 400; color: #555555; position: relative;
 
 div#content .row { background: white; }
 
-div#content { background: #34495e; min-height: 80%;}
+div#content { background: url(../img/retina_wood.png); min-height: 80%;}
 
 html, body { height: 100%; }
 
