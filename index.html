@@ -102,7 +102,7 @@
 						</tr>
 						<tr class="friday-operation saturday-operation">
 							<td>Friday - Saturday</td>
-							<td class="Operating-hours">11:00am - 10:00pm</td>
+							<td class="operating-hours">11:00am - 10:00pm</td>
 							<td class="operating-status"></td>
 						</tr>
 						<tr class="sunday-operation">
@@ -110,7 +110,7 @@
 							<td class="operating-hours">12:00pm - 8:00pm</td>
 							<td class="operating-status"></td>
 						</tr>
-					<tbody>
+					</tbody>
 				</table>
 				<h3>Location</h3>
 					<p class="only-on-phones">7065 Airways Blvd Southaven, MS 38671<br/>Front Door Access on Moore Dr</p>
@@ -276,44 +276,44 @@
 	switch (date.getDay()) {
 	    case 0:
 	        highlightSpecial('sunday-special');
-	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 11, 0);
-	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 19, 0);
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12, 0);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 20, 0);
 	        highlightOperatingStatus('sunday-operation', open, close);
 	        break;
 	    case 1:
 	        highlightSpecial('monday-special');
-	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 11, 0);
 	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
 	        highlightOperatingStatus('monday-operation', open, close);
 	        break;
 	    case 2:
 	        highlightSpecial('tuesday-special');
-	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 11, 0);
 	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
 	        highlightOperatingStatus('tuesday-operation', open, close);
 	        break;
 	    case 3:
 	        highlightSpecial('wednesday-special');
-	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 11, 0);
 	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
 	        highlightOperatingStatus('wednesday-operation', open, close);
 	        break;
 	    case 4:
 	        highlightSpecial('thursday-special');
-	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 11, 0);
 	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
 	        highlightOperatingStatus('thursday-operation', open, close);
 	        break;
 	    case 5:
 	        highlightSpecial('friday-special');
-	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
-	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 11, 0);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 22, 0);
 	        highlightOperatingStatus('friday-operation', open, close);
 	        break;
 	    case 6:
 	        highlightSpecial('saturday-special');
-	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 10, 30);
-	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 21, 0);
+	        var open = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 11, 0);
+	        var close = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 22, 0);
 	        highlightOperatingStatus('saturday-operation', open, close);
 	        break;
 	}
